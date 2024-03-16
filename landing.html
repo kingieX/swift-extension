@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Konvey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 450px;
+      width: 400px;
+      /* padding: 20px; */
+      background-color: #fff;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      /* justify-content: center; */
+      /* align-items: center; */
+    }
+    .logo {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 40px;
+    }
+    .logo p {
+      font-weight: bold;
+      font-size: 2em;
+      color: #4b84f3;
+    }
+
+    .wel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .wel h3 {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    .wel p {
+      /* margin-top: -5px; */
+      font-weight: 500;
+      font-size: 1em;
+    }
+
+    .btn button {
+      width: 220px;
+      height: 35px;
+      border: none;
+      border-radius: 20px;
+      background-color: #4b84f3;
+      color: white;
+      font-weight: 500;
+      font-size: 1em;
+      font-size: 1em;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #efac25;
+    }
+  </style>
+</head>
+    <body>
+        <div class="box">
+            <div class="logo">
+                <img src="assets/32.png" alt="logo">
+                <p>Konvey</p>
+            </div>
+            <div class="wel">
+                <h3>Welcome to Konvey</h3>
+                <p>Please login to continue</p>
+            </div>
+            <div class="btn">
+                <!-- Use an anchor tag with href pointing to the target page -->
+                <a href="recordSetup.html">
+                    <button>Login</button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

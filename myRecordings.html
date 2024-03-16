@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recordings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: ; */
+            /* align-items: center; */
+            height: 450px;
+            width: 400px;
+            /* padding: 20px; */
+            /* background-color: #fff; */
+            background-color: rgb(249, 249, 249);
+        }
+
+            .mainPage {
+                padding: 10px;
+            }
+            .mainPage h3 {
+                text-align: left;
+                font-size: 1.5em;
+            }
+
+            .record {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                height: 70px;
+                /* // border: 1px solid; */
+                margin-bottom: 10px;
+            }
+
+            .title {
+                margin-left: -50px;
+                line-height: 2px;
+                font-size: 0.8em;
+            }
+
+            .btns {
+                display: flex;
+                gap: 10px;
+            }
+
+            hr {
+                border: 1px solid #ddd;
+                position: absolute;
+                bottom: 7%;
+                /* // margin-bottom: 5px; */
+                right: 0%;
+                width: 100%;
+            }
+
+            .text {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                /* // padding: 10px; */
+                font-size: 1em;
+                font-weight: 600;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%); 
+            }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" style="width: 40px; height: 40px;">
+            <p>Swift</p>
+        </div>
+        <div class="menu">
+          <a href="/recordSetup.html" class="menu-link" id="setup-link">
+            <img src="assets/images/video.svg" alt="Menu Icon" style="width: 20px;">
+          </a>
+          <a href="/videoLabel.html" class="menu-link" id="videolabel-link">
+            <img src="assets/images/add.png" alt="Menu Icon" style="width: 20px;">
+          </a>
+          <a href="/myRecordings.html" class="menu-link" id="myrecording-link">
+            <img src="assets/images/film.png" alt="Menu Icon" style="width: 20px;">
+          </a>
+          <a href="/recordingPreference.html" class="menu-link" id="preferences-link">
+            <img src="assets/images/settings.svg" alt="Menu Icon" style="width: 20px;">
+          </a>
+        </div>
+        <script src="navbar.js"></script>
+    </div>
+    <!-- <hr> -->
+
+
+    <div class="mainPage">
+        <div>
+            <h3>My Recordings</h3>
+        </div>
+        <!-- add recording dynamically -->
+        <div id="myRecordingsContainer"></div>
+        <hr />
+
+        <div class="text">
+            <p>Open My Recording</p>
+            <img src="assets/images/copy.svg" alt="" style="width: 14px; cursor: pointer;">
+        </div>
+        <!-- other dynamic contents goes here -->
+    </div>
+
+    <script src="myRecordings.js"></script>
+</body>
+</html>

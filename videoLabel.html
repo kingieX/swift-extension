@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Label</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: ; */
+            /* align-items: center; */
+            height: 450px;
+            width: 400px;
+            /* background-color: #fff; */
+        }
+        /* hr {
+        border: 1px solid #ddd;
+        width: 100%;
+        } */
+        .mainPage {
+            background-color: rgb(249, 249, 249);
+            padding: 10px;
+            margin:5px 10px;
+            /* margin: 10px; */
+        }
+
+        /* selections */
+        .resolution {
+            /* margin-top: 15px; */
+            margin:5px 0;
+        }
+        .resolution select {
+            width: 350px;
+            height: 35px;
+            background-color: rgb(230, 246, 247);
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: none;
+            padding: 0 10px;
+            outline: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-size: 30px 30px;
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+        .resolution select option {
+            background-color: white;
+        }
+        .resolution select option:hover {
+            background-color: rgb(230, 246, 247);
+        }
+
+
+
+        label {
+            font-weight: bold;
+            font-size: 1.5em;               
+        }
+
+        .inputStyle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* justify-content: space-around; */
+            /* align-items: center; */
+            margin-top: 10px;
+            margin-bottom: 20px
+        }
+        .upload {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+            height: 100px; 
+            padding: 0 5px;
+            border: 1px solid #ddd;
+            outline: none;
+            border-radius: 5px;
+            /* margin-left: -5px; */
+        }
+        .converted {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            width: 350px;
+            height: 30px; 
+            padding: 0 5px;
+            border: 1px solid #ddd;
+            outline: none;
+            border-radius: 5px;
+            /* margin-left: -5px; */
+        }
+        .btn {
+            /* width: 100px; */
+            height: 35px;
+            text-align: center;
+            border: none;
+            border-radius: 20px;
+            /* background-color: #4b84f3; */
+            background-color: #000;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+            font-weight:500;
+            font-size: 1.3em;
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+        }
+        .inputStyle1 {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-bottom: 20px;
+        }  
+        .copy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background-color: #fff;
+            height: 30px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            gap: 5px;
+            font-size: 0.7em;
+            color: #4b84f3;
+            cursor: pointer;
+        }
+        .copy:hover {
+            font-size: 0.73em
+        }
+        .copy img {
+            width: 16px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 10px;
+            /* // width: 70%; */
+            margin: 0 auto;
+            overflow: hidden; 
+            font-size: 1em;
+        }
+          
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            /* // align-items: center; */
+            margin-bottom: 10px;
+        }
+          
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            /* // align-items: center; */
+            margin-bottom: 8px;
+        }
+          
+        .list-item span, .list-header span {
+            flex: 1/5;
+        }
+
+        .hr {
+            border: 1px solid #ddd;
+            position: absolute;
+                bottom: 7%;
+                /* // margin-bottom: 5px; */
+                right: 0%;
+                width: 100%;
+            }
+
+            .text {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                /* // padding: 10px; */
+                font-size: 1em;
+                font-weight: 600;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="logo" style="width: 40px; height: 40px;">
+            <p>Swift</p>
+        </div>
+        <div class="menu">
+          <a href="/recordSetup.html" class="menu-link" id="setup-link">
+            <img src="assets/images/video.svg" alt="Menu Icon" style="width: 20px;">
+          </a>
+          <a href="/videoLabel.html" class="menu-link" id="videolabel-link">
+            <img src="assets/images/add.png" alt="Menu Icon" style="width: 20px;">
+          </a>
+          <a href="/myRecordings.html" class="menu-link" id="myrecording-link">
+            <img src="assets/images/film.png" alt="Menu Icon" style="width: 20px;">
+          </a>
+          <a href="/recordingPreference.html" class="menu-link" id="preferences-link">
+            <img src="assets/images/settings.svg" alt="Menu Icon" style="width: 20px;">
+          </a>
+        </div>
+        <script src="navbar.js"></script>
+    </div>
+    <!-- <hr> -->
+
+    
+    <div class="mainPage">
+        <div class="resolution">
+            <h2>Select file to convert</h2>
+            <select name="resolution">
+              <option value="pdf">Convert pdf to word document</option>
+              <option value="word">Convert word to pdf document</option>
+              <option value="png">Convert png to jpg image</option>
+              <option value="jpg">Convert jpg to png images</option>
+              <option value="removebg">Remove image background</option>
+              <!-- <option value="4k">4k video or Ultra HD (UHD)</option> -->
+            </select>
+        </div>
+
+        <div class="inputStyle">
+            <!-- <h2>Upload file</h2> -->
+            <label>
+                Upload file
+                <input type="file" class="upload">
+            </label>
+            <label>
+                Converted file
+                <input type="input" class="converted">
+            </label>
+            <button class="btn">Download</button>
+        </div>
+
+        <!-- <label>
+            Label
+            <div class="inputStyle">
+                <input type="text" placeholder="Enter labels">
+                <button class="btn" onclick="createRequest()">Create Request</button>
+            </div>
+        </label>
+        <label>
+            Request Link is Ready
+            <div class="inputStyle1">
+                <input type="text" name="" id="" value="" style="width: 250px; height: 25px; padding-left: 5px; margin-left: -10px;">
+                <button class="copy" onclick="copyToClipboard()">
+                    <img src="assets/images/blue_link.png" alt="" style="width: 16px;">
+                    <p>Copy Link</p>
+                </button>
+            </div>
+        </label> -->
+
+        <!-- <h3 style="font-size: 1.5em;">Most Recent Labels</h3>
+        <div class="container">
+            <div class="list-header">
+                <span>#</span>
+                <span>Label</span>
+                <span>Link URL</span>
+                <span>No of Recording</span>
+                <span>Actions</span>
+            </div>
+            Recent links will be populated here
+            <div key={index} class="list-item">
+                <span>{1}</span>
+                <span>Item 2</span>
+                <span>{link}</span>
+                <span>10</span>
+            <div className='btns'>
+                <img src="assets/images/link.svg" alt="clip" style="width: 14px; margin-right: 5px; cursor: pointer;"/>
+                <img src="assets/images/delete.svg" alt="delete" style="width: 14px; cursor: pointer;"/>
+            </div>
+        </div> -->
+
+        <hr class="hr">
+        <div class="text">
+            <p>Open Request Links</p>
+            <img src="assets/images/copy.svg" alt="" style="width: 10px; cursor: pointer;" onclick="getRequestLinks()">
+        </div>
+    </div>
+</body>
+</html>

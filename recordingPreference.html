@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recording Preferences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+      * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: ; */
+            align-items: center;
+            height: 450px;
+            width: 400px;
+            /* background-color: #fff; */
+        }
+
+        hr {
+          border: 1px solid #ddd;
+          margin: 5px 0;
+          width: 100%;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 30px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .paragraph {
+          /* margin-top: -10px; */
+          font-size: 1em;
+          /* line-height: 1.5; */
+        }
+        .paragraph span {
+            color: #4b84f3;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 20px;
+        }
+
+        .checkbox {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+        
+        .checkbox label {
+          font-size: 1em;
+          margin-left: 5px;
+        }
+        
+        .checkbox input {
+          width: 16px;
+          height: 16px;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .btn-group {
+          margin: 15px 0;
+        }
+
+        .btn {
+          width: 75px;
+          height: 30px;
+          text-align: center;
+          border: none;
+          border-radius: 6px;
+          /* background-color: #4b84f3; */
+          background-color: #000;
+          color: white;
+          margin-bottom: 10px;
+          cursor: pointer;
+          font-weight:600;
+        }
+        .btn:hover {
+          background-color: #fff;
+          color: #000;
+          border: 1px solid #000;
+        }
+
+        .btn2 {
+          width: 100px;
+          height: 30px;
+          text-align: center;
+          border: 1px solid #000;
+          border-radius: 6px;
+          background-color: #fff;
+          color: #000;
+          margin-bottom: 10px;
+          cursor: pointer;
+          font-weight:600;
+          margin-left: 20px;
+        }
+        .btn2:hover {
+          background-color: #000;
+          color: #fff;
+        }
+
+        .signout-box {
+          position: absolute;
+          background-color: #eff3ff;
+          width: 85%;
+          height: 50px;
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 30px;
+          right: 0%;
+          bottom : 0px;
+        }
+        .signout-box div {
+          /* line-height: 0.2; */
+          font-size: 1em;
+        }
+
+        .btn3 {
+          width: 70px;
+          height: 30px;
+          border: none;
+          border-radius: 6px;
+          background-color: #4b84f3;
+          color: white;
+          cursor: pointer;
+          font-weight:500;
+        }
+        .btn3:hover {
+          background-color: white;
+          border: 1px solid #4b84f3;
+          color: #4b84f3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="assets/logo.png" alt="logo" style="width: 40px; height: 40px;">
+        <p>Swift</p>
+      </div>
+      <div class="menu">
+        <a href="/recordSetup.html" class="menu-link" id="setup-link">
+          <img src="assets/images/video.svg" alt="Menu Icon" style="width: 20px;">
+        </a>
+        <a href="/videoLabel.html" class="menu-link" id="videolabel-link">
+          <img src="assets/images/add.png" alt="Menu Icon" style="width: 20px;">
+        </a>
+        <a href="/myRecordings.html" class="menu-link" id="myrecording-link">
+          <img src="assets/images/film.png" alt="Menu Icon" style="width: 20px;">
+        </a>
+        <a href="/recordingPreference.html" class="menu-link" id="preferences-link">
+          <img src="assets/images/blue_settings.png" alt="Menu Icon" style="width: 20px;">
+        </a>
+      </div>
+      <script src="navbar.js"></script>
+    </div>
+    <hr>
+
+
+    <div class="content">
+      <div class="section">
+        <h3 class="title">Recording preferences</h3>
+        <div class="checkbox-group">
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Copy Link to Clipboard</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Mirror camera</label>
+          </div>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="checkbox3">
+          <label for="checkbox3">Recording Preview</label>
+        </div>
+      </div>
+
+      <!-- Camera shape -->
+      <div class="section">
+        <h3 class="title">Camera shape</h3>
+        <div class="checkbox-group">
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox4">
+            <label for="checkbox4">Squared</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox5">
+            <label for="checkbox5">Slightly rounded</label>
+          </div>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="checkbox6">
+          <label for="checkbox6">Rounded</label>
+        </div>
+      </div>
+
+      <!-- Help and support -->
+      <div>
+        <h3 class="title">Help & Support</h3>
+        <p class="paragraph">Having problems? Try reloading Swift or updating the browser to the latest version. <span>Email support here</span></p>
+        <div class="btn-group">
+          <button class="btn" id="reloadBtn">Reload</button>
+          <button class="btn2">Help Center</button>
+        </div>
+      </div>
+
+      <!-- Sign out -->
+        <div class="signout-box">
+          <div>
+            <p>Account</p>
+            <!-- Dynamic display of email should be here -->
+            <p>example@email.com</p>
+          </div>
+          <button class="btn3" id="signOutBtn">Sign out</button>
+        </div>
+    </div>
+  <script src="recordingPreference.js"></script>
+</body>
+</html>

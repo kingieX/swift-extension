@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Record Setup - Konvey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Styles for navbar -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center ;
+    }
+    .container {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: ; */
+      align-items: center;
+      height: 450px;
+      width: 400px;
+      /* padding: 20px; */
+      background-color: #fff;
+    }
+    hr {
+      border: 1px solid #ddd;
+      width: 100%;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding:20px 0;
+      /* gap: 10px; */
+    }
+    .header {
+      padding: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* // toggle */
+    button {
+      all: unset;
+    }
+            
+    .SwitchRoot {
+      width: 50px;
+      height: 25px;
+      background-color: rgb(185, 194, 193);
+      border: 1px solid rgb(185, 194, 193);
+      border-radius: 9999px;
+      outline: none;
+      position: relative;
+      /* // box-shadow: 0 2px 10px #4b84f3; */
+      -webkit-tap-highlight-color: #4b84f3;
+    }
+    .SwitchRoot:focus {
+      box-shadow: 0 0 0 2px black;
+    }
+    .SwitchRoot[data-state='checked'] {
+      background-color: white;
+      /* border-color: #4b84f3; */
+      border-color: #000
+    }
+            
+    .SwitchThumb {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border-radius: 9999px;
+      /* // box-shadow: 0 2px 2px var(--black-a7); */
+      transition: transform 100ms;
+      transform: translateX(0px);
+      will-change: transform;
+    }
+    .SwitchThumb[data-state='checked'] {
+      transform: translateX(25px);
+      /* background-color: #4b84f3; */
+      background-color: #000;
+      /* border: 2px solid #4b84f3; */
+    }
+            
+    .Label {
+      /* // color: white; */
+      font-size: 1em;
+      line-height: 1;
+      margin-left: 10px;
+    }
+
+    .resolution {
+      margin-top: 15px;
+    }
+    .resolution select {
+      width: 210px;
+      height: 35px;
+      background-color: rgb(230, 246, 247);
+      font-size: 1em;
+      border-radius: 5px;
+      border: none;
+      padding: 0 10px;
+      outline: none;
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+      background-size: 30px 30px;
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+    .resolution select option {
+      background-color: white;
+    }
+    .resolution select option:hover {
+      background-color: rgb(230, 246, 247);
+    }
+
+    .microphone {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+      background-color: rgb(230, 246, 247);
+      margin: 10px;
+      width: 210px;
+      height: 35px;
+      font-size: 1em;
+      font-weight: 500;
+      margin-bottom:15px;
+    }
+    .microphone img {
+      width: 14px;
+    }
+
+    .btn2 {
+      /* background-color: #4b84f3; */
+      background-color: #000;
+      padding: 3px 4px;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .startBtn {
+      width: 80px;
+      height: 35px;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      /* background-color: #4b84f3; */
+      background-color: #000;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight:500;
+      font-size: 1.3em;
+    }
+    .startBtn:hover {
+      /* background-color: #efac25; */
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .stopBtn {
+      width: 80px;
+      height: 35px;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      /* background-color: #4b84f3; */
+      background-color: #f70c0c;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight:500;
+      font-size: 1.3em;
+    }
+    .stopBtn:hover {
+      /* background-color: #efac25; */
+      background-color: #fff;
+      color: #f70c0c;
+      border: 1px solid #f70c0c;
+    }
+
+    .cancelBtn {
+      width: 80px;
+      height: 35px;
+      text-align: center;
+      border: 1px solid #000;
+      border-radius: 20px;
+      /* background-color: #4b84f3; */
+      background-color: #fff;
+      color: #000;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight:500;
+      font-size: 1.3em;
+    }
+    .cancelBtn:hover {
+      /* background-color: #efac25; */
+      background-color: #000;
+      color: #fff;
+      /* border: 1px solid #000; */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+        <!-- Navbar -->
+          <div class="navbar">
+            <div class="logo">
+              <img src="assets/logo.png" alt="logo" style="width: 40px; height: 40px;">
+              <p>Swift</p>
+            </div>
+            <div class="menu">
+              <a href="/recordSetup.html" class="menu-link" id="setup-link">
+                <img src="assets/images/video.svg" alt="Menu Icon" style="width: 20px;">
+              </a>
+              <a href="/videoLabel.html" class="menu-link" id="videolabel-link">
+                <img src="assets/images/add.png" alt="Menu Icon" style="width: 20px;">
+              </a>
+              <a href="/myRecordings.html" class="menu-link" id="myrecording-link">
+                <img src="assets/images/film.png" alt="Menu Icon" style="width: 20px;">
+              </a>
+              <a href="/recordingPreference.html" class="menu-link" id="preferences-link">
+                <img src="assets/images/settings.svg" alt="Menu Icon" style="width: 20px;">
+              </a>
+            </div>
+            <script src="navbar.js"></script>
+          </div>
+          <hr>
+
+        <div class="content">
+          <h3 class="header">Start Your Recording</h3>
+          <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center; align-items: flex-start">
+            <!-- Screen -->
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <!-- Switch for Screen -->
+              <div class="SwitchRoot" id="screen">
+                <div class="SwitchThumb"></div>
+              </div>
+              <label class="Label" for="screen" style="padding-right: 15px;">Screen</label>
+            </div>
+            <!-- Camera -->
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <!-- Switch for Camera -->
+              <div class="SwitchRoot" id="camera">
+                <div class="SwitchThumb"></div>
+              </div>
+              <label class="Label" for="camera" style="padding-right: 15px;">Camera</label>
+            </div>
+            <!-- Screen + Cam -->
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <!-- Switch for Screen + Cam -->
+              <div class="SwitchRoot" id="screenCam">
+                <div class="SwitchThumb"></div>
+              </div>
+              <label class="Label" for="screenCam" style="padding-right: 15px;">Screen + Cam</label>
+            </div>
+          </div>
+
+          <!-- Video Quality -->
+          <div class="resolution">
+            <select name="resolution">
+              <option value="360p">SD (Standard Definition) 360p</option>
+              <option value="480p">FSD (Full Standard Definition) 480p</option>
+              <option value="720p">HD (High Definition) 720p</option>
+              <option value="1080p">FHD (Full High Definition) 1080p</option>
+              <option value="2k">2k video (Quad HD)</option>
+              <option value="4k">4k video or Ultra HD (UHD)</option>
+            </select>
+          </div>
+
+          <!-- Microphone -->
+          <div>
+            <div class="microphone">
+              <img src="assets/images/microphone.svg" alt="mic">
+              <p style="margin-left: -15px;">Default - Microphone</p>
+              <div>
+                <button class="btn2">on</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Start Recording -->
+          <div class="buttons">
+            <button class="startBtn">Start</button>
+            <button class="stopBtn">Stop</button>
+            <button class="cancelBtn">Cancel</button>
+          </div>
+        </div>
+    <script src="recordSetup.js"></script>
+  </body>
+</div>
+</html>

@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Swift",
+    "description": "Capture every moment...",
+    "version": "1.0.0",
+    "action": {
+      "default_title": "Swift",
+      "default_icon" : "assets/logo1.png",
+      "default_popup":"videoLabel.html"
+    }
+  }
